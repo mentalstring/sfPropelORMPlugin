@@ -122,7 +122,7 @@ abstract class sfFormPropel extends sfFormObject
    * @param array $taintedValues  An array of input values
    * @param array $taintedFiles   An array of uploaded files (in the $_FILES or $_GET format)
    */
-  public function bind(array $taintedValues = null, array $taintedFiles = null)
+  public function bind(?array $taintedValues = null, ?array $taintedFiles = null)
   {
     $this->addOptionalForms($taintedValues);
     return parent::bind($taintedValues, $taintedFiles);
@@ -466,7 +466,7 @@ abstract class sfFormPropel extends sfFormObject
    *
    * @return string The filename used to save the file
    */
-  protected function saveFile($field, $filename = null, sfValidatedFile $file = null)
+  protected function saveFile($field, $filename = null, ?sfValidatedFile $file = null)
   {
     if (!$this->validatorSchema[$field] instanceof sfValidatorFile)
     {
